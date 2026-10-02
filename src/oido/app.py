@@ -64,6 +64,8 @@ def listen_forever(
 
             label = "🎤" if mode == "singing" else "🗣️" if mode == "speech" else "◌"
             print(f"{label} {text or '[audio guardado, sin texto]'}")
+            if transcript.error:
+                print(f"   ⚠️ STT falló, WAV preservado: {transcript.error}")
             for ann in seg.annotations:
                 print(f"   {ann.label} {ann.detail}")
     except KeyboardInterrupt:
