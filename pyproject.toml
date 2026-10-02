@@ -1,0 +1,24 @@
+[project]
+name = "oido"
+version = "0.1.0"
+description = "Continuous audio capture, transcription and intelligent notebook"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy>=1.26",
+  "sounddevice>=0.4.7",
+  "soundfile>=0.12.1",
+  "rich>=13.7",
+]
+
+[project.optional-dependencies]
+stt = ["faster-whisper>=1.0.3"]
+dev = ["pytest>=8.0", "ruff>=0.6"]
+
+[project.scripts]
+oido = "oido.app:main"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
