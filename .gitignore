@@ -1,0 +1,9 @@
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.venv/
+data/audio/
+data/*.jsonl
+data/*.html
+*.wav
+*.flac
